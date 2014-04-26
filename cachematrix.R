@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+##Calculating the Inverse for matrix is a costly operation so if the matrix is not changing it's Inverse should be calculated ##once and we should cache the value for future use, the below functions do this job.
 
-## Write a short comment describing this function
+
+##The function, makeCacheMatrix creates a special "Matrix", which is really a list containing a function to
+## 1)set the value of the Matrix
+## 2)get the value of the Matrix
+## 3)set the value of the Inverse
+## 4)get the value of the Inverse
 
 makeCacheMatrix <- function(x = matrix()) {
 	m <- NULL
@@ -29,7 +33,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The following function calculates the Inverse of the special "Matrix" created with the above function. However, it first ##checks to see if the Inverse has already been calculated. If so, it gets the Inverse from the cache and skips the ##computation. Otherwise, it calculates the Inverse of the matrix and sets the value of the Inverse in the cache via the ##solve() function.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
